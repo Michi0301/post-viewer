@@ -15,14 +15,14 @@ class PostApplet extends Component {
   buildPostItems() {
     return (
       this.props.posts.map((post, index) => {
-        return <PostItem title={post.title} handleClick={this.handleItemClick.bind(this, index)} key={index} />
+        return <PostItem title={post.title} handleClick={this.handleItemClick.bind(this, post)} key={index} />
       })    
     );
   }
 
-  handleItemClick(index) {
+  handleItemClick(post) {
     this.setState({
-      currentPost: this.props.posts[index]
+      currentPost: post
     });
   }
 
